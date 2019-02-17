@@ -1,0 +1,30 @@
+﻿<Window x:Class="Steam_Authenticator_Updater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SDA Updater" Height="316.667" Width="475" Icon="icon.ico" WindowStartupLocation="CenterScreen" BorderThickness="0" HorizontalAlignment="Right" VerticalAlignment="Top" Closing="Window_Closing">
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="1" Direction="260"/>
+    </Window.Effect>
+
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="pbTaskbar" Description="SDA Updater" ProgressState="None"/>
+    </Window.TaskbarItemInfo>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="262*"/>
+            <ColumnDefinition Width="262*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtOutput" VerticalScrollBarVisibility="Auto"  Margin="10,10,10,67" IsEnabled="False" Grid.ColumnSpan="2" ToolTip="Shows info about is going on."/>
+        <ProgressBar x:Name="pbStatus" Height="27" Margin="60,0,60,40" VerticalAlignment="Bottom" Grid.ColumnSpan="2" ToolTip="Shows how far into a task SDA updater is." Visibility="Hidden"/>
+        <Button x:Name="btnUpdate" Content="Update" Margin="10,0,10,10" Height="25" ToolTip="Update SDA from the update zip file." VerticalAlignment="Bottom" Click="BtnUpdate_Click" MouseRightButtonUp="BtnUpdate_MouseRightButtonUp" IsDefault="True"/>
+        <Button x:Name="btnCancel" Content="Exit" Grid.Column="1" Margin="10,0,10,10" Height="25" ToolTip="Stop updating SDA and restore the previous install." VerticalAlignment="Bottom" Click="BtnCancel_Click"/>
+        <Label x:Name="statusMax" Content="" Grid.Column="1" Margin="0,0,9,40" VerticalAlignment="Bottom" Height="27" IsEnabled="False" HorizontalAlignment="Right" Width="46" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="statusCurrent" Content="" HorizontalAlignment="Left" Margin="10,0,0,40" VerticalAlignment="Bottom" Width="45" Height="27" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <!--Style="{StaticResource MaterialDesignFlatButton}"-->
+
+    </Grid>
+</Window>
